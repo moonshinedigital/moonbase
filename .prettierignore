@@ -1,0 +1,10 @@
+# Ignore all files:
+*.*
+
+# Ignore minified JavaScript:
+*.min.js
+
+# Allow only the following files:
+!src/**/*.css
+!src/**/*.js
+!theme/**/*.php
