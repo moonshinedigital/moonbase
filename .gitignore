@@ -1,11 +1,11 @@
 # Ignore dependencies from npm and Composer:
-/node_modules
-/vendor
+node_modules/
+vendor/
 
 # Ignore generated files:
-/assets/**/*.css
-/assets/**/*.js
-/assets/**/*.min.js
+theme/assets/**/*.css
+theme/assets/**/*.js
+theme/assets/**/*.min.js
 
 # Ignore the generated zip file:
 moonbase.zip
