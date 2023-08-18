@@ -12,7 +12,6 @@
  *
  * @return array Returns the modified fields.
  */
-
 function mb_comment_form_defaults( $defaults ) {
 	$comment_field = $defaults['comment_field'];
 
@@ -64,14 +63,14 @@ add_filter( 'get_the_archive_title', 'mb_get_the_archive_title' );
  * Determines whether the post thumbnail can be displayed.
  */
 function mb_can_show_post_thumbnail() {
-	 return apply_filters( 'mb_can_show_post_thumbnail', ! post_password_required() && ! is_attachment() && has_post_thumbnail() );
+	return apply_filters( 'mb_can_show_post_thumbnail', ! post_password_required() && ! is_attachment() && has_post_thumbnail() );
 }
 
 /**
  * Returns the size for avatars used in the theme.
  */
 function mb_get_avatar_size() {
-	 return 60;
+	return 60;
 }
 
 /**
@@ -123,32 +122,32 @@ function mb_html5_comment( $comment, $args, $depth ) {
 		$moderation_note = __( 'Your comment is awaiting moderation. This is a preview; your comment will be visible after it has been approved.', 'moonbase' );
 	}
 	?>
-	<<?php echo esc_attr( $tag ); ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( $comment->has_children ? 'parent' : '', $comment ); ?>>
-		<div id="div-comment-<?php comment_ID(); ?>" class="comment-body">
-			<div class="comment-meta">
-				<div class="comment-author vcard">
-					<?php
-					if ( 0 !== $args['avatar_size'] ) {
-						echo get_avatar( $comment, $args['avatar_size'] );
-					}
-					?>
-					<?php
+<<?php echo esc_attr( $tag ); ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( $comment->has_children ? 'parent' : '', $comment ); ?>>
+	<div id="div-comment-<?php comment_ID(); ?>" class="comment-body">
+		<div class="comment-meta">
+			<div class="comment-author vcard">
+				<?php
+				if ( 0 !== $args['avatar_size'] ) {
+					echo get_avatar( $comment, $args['avatar_size'] );
+				}
+				?>
+				<?php
 					$comment_author = get_comment_author_link( $comment );
 
-					if ( '0' === $comment->comment_approved && ! $show_pending_links ) {
-						$comment_author = get_comment_author( $comment );
-					}
+				if ( '0' === $comment->comment_approved && ! $show_pending_links ) {
+					$comment_author = get_comment_author( $comment );
+				}
 
 					printf(
 						/* translators: %s: Comment author link. */
 						wp_kses_post( __( '%s <span class="says">says:</span>', 'moonbase' ) ),
 						sprintf( '<b class="fn">%s</b>', wp_kses_post( $comment_author ) )
 					);
-					?>
-				</div>
+				?>
+			</div>
 
-				<div class="comment-metadata">
-					<?php
+			<div class="comment-metadata">
+				<?php
 					printf(
 						'<a href="%s"><time datetime="%s">%s</time></a>',
 						esc_url( get_comment_link( $comment, $args ) ),
@@ -164,34 +163,34 @@ function mb_html5_comment( $comment, $args, $depth ) {
 					);
 
 					edit_comment_link( __( 'Edit', 'moonbase' ), ' <span class="edit-link">', '</span>' );
-					?>
-				</div>
-
-				<?php if ( '0' === $comment->comment_approved ) : ?>
-					<em class="comment-awaiting-moderation"><?php echo esc_html( $moderation_note ); ?></em>
-				<?php endif; ?>
+				?>
 			</div>
 
-			<div>
-				<?php comment_text(); ?>
-			</div>
-
-			<?php
-			if ( '1' === $comment->comment_approved || $show_pending_links ) {
-				comment_reply_link(
-					array_merge(
-						$args,
-						array(
-							'add_below' => 'div-comment',
-							'depth'     => $depth,
-							'max_depth' => $args['max_depth'],
-							'before'    => '<div class="reply">',
-							'after'     => '</div>',
-						)
-					)
-				);
-			}
-			?>
+			<?php if ( '0' === $comment->comment_approved ) : ?>
+			<em class="comment-awaiting-moderation"><?php echo esc_html( $moderation_note ); ?></em>
+			<?php endif; ?>
 		</div>
+
+		<div>
+			<?php comment_text(); ?>
+		</div>
+
+		<?php
+		if ( '1' === $comment->comment_approved || $show_pending_links ) {
+			comment_reply_link(
+				array_merge(
+					$args,
+					array(
+						'add_below' => 'div-comment',
+						'depth'     => $depth,
+						'max_depth' => $args['max_depth'],
+						'before'    => '<div class="reply">',
+						'after'     => '</div>',
+					)
+				)
+			);
+		}
+		?>
+	</div>
 	<?php
 }

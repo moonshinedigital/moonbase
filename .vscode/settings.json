@@ -14,5 +14,14 @@
 		"**/vendor": true,
 		"**/theme/assets/css": true,
 		"**/theme/assets/js": true
-	}
+	},
+	"eslint.validate": [
+		"vue",
+		"html",
+		"php",
+		"javascript",
+		"typescript",
+		"javascriptreact",
+		"typescriptreact"
+	]
 }

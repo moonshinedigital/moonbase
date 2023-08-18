@@ -6,6 +6,7 @@
  *
  * @package Moonbase
  */
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -36,8 +37,8 @@
 	</div>
 
 	<?php if ( get_edit_post_link() ) : ?>
-		<div class="entry-footer">
-			<?php
+	<div class="entry-footer">
+		<?php
 			edit_post_link(
 				sprintf(
 					wp_kses(
@@ -52,8 +53,8 @@
 					get_the_title()
 				)
 			);
-			?>
-		</div>
+		?>
+	</div>
 	<?php endif; ?>
 
 </article>

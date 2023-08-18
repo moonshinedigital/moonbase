@@ -1,10 +1,12 @@
-# Ignore all files:
-*.*
+# Ignore dependencies from npm and Composer:
+node_modules/
+vendor/
 
 # Ignore minified JavaScript:
 *.min.js
 
-# Allow only the following files:
-!src/**/*.css
-!src/**/*.js
-!theme/**/*.php
+# Ignore production builds
+theme/assets/**/*.css
+theme/assets/**/*.js
+
+# # Explicitly allow the following files:

@@ -6,6 +6,7 @@
  *
  * @package Moonbase
  */
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -14,9 +15,9 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
 		<?php if ( ! is_page() ) : ?>
-			<div class="entry-meta">
-				<?php mb_entry_meta(); ?>
-			</div>
+		<div class="entry-meta">
+			<?php mb_entry_meta(); ?>
+		</div>
 		<?php endif; ?>
 	</div>
 

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The template for displaying all pages
  *
@@ -32,7 +31,7 @@ get_header();
 	endwhile; // End of the loop.
 	?>
 
-</main><!-- #main -->
+</main>
 
 <?php
 get_sidebar();

@@ -26,7 +26,7 @@ if ( ! function_exists( 'mb_posted_on' ) ) :
 		printf(
 			'<a href="%1$s" rel="bookmark">%2$s</a>',
 			esc_url( get_permalink() ),
-			$time_string
+			wp_kses_post( $time_string )
 		);
 	}
 endif;
@@ -81,7 +81,7 @@ if ( ! function_exists( 'mb_entry_meta' ) ) :
 					/* translators: 1: posted in label, only visible to screen readers. 2: list of categories. */
 					'<span class="sr-only">%1$s</span>%2$s',
 					esc_html__( 'Posted in', 'moonbase' ),
-					$categories_list
+					wp_kses_post( $categories_list )
 				);
 			}
 
@@ -92,7 +92,7 @@ if ( ! function_exists( 'mb_entry_meta' ) ) :
 					/* translators: 1: tags label, only visible to screen readers. 2: list of tags. */
 					'<span class="sr-only">%1$s</span>%2$s',
 					esc_html__( 'Tags:', 'moonbase' ),
-					$tags_list
+					wp_kses_post( $tags_list )
 				);
 			}
 		}
@@ -142,7 +142,7 @@ if ( ! function_exists( 'mb_entry_footer' ) ) :
 					/* translators: 1: posted in label, only visible to screen readers. 2: list of categories. */
 					'<span class="sr-only">%1$s</span>%2$s',
 					esc_html__( 'Posted in', 'moonbase' ),
-					$categories_list
+					wp_kses_post( $categories_list )
 				);
 			}
 
@@ -153,7 +153,7 @@ if ( ! function_exists( 'mb_entry_footer' ) ) :
 					/* translators: 1: tags label, only visible to screen readers. 2: list of tags. */
 					'<span class="sr-only">%1$s</span>%2$s',
 					esc_html__( 'Tags:', 'moonbase' ),
-					$tags_list
+					esc_html( $tags_list )
 				);
 			}
 		}
@@ -194,19 +194,19 @@ if ( ! function_exists( 'mb_post_thumbnail' ) ) :
 		if ( is_singular() ) :
 			?>
 
-			<figure>
-				<?php the_post_thumbnail(); ?>
-			</figure>
+<figure>
+			<?php the_post_thumbnail(); ?>
+</figure>
 
 			<?php
 		else :
 			?>
 
-			<figure>
-				<a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-					<?php the_post_thumbnail(); ?>
-				</a>
-			</figure>
+<figure>
+	<a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+			<?php the_post_thumbnail(); ?>
+	</a>
+</figure>
 
 			<?php
 		endif; // End is_singular().
@@ -244,7 +244,7 @@ if ( ! function_exists( 'mb_discussion_avatars_list' ) ) :
 		foreach ( $comment_authors as $id_or_email ) {
 			printf(
 				"<li>%s</li>\n",
-				mb_get_user_avatar_markup( $id_or_email )
+				wp_kses_post( mb_get_user_avatar_markup( $id_or_email ) )
 			);
 		}
 		echo '</ol>', "\n";

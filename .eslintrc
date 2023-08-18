@@ -1,17 +1,10 @@
 {
 	"root": true,
-	"ignorePatterns": [
-		"*.min.js"
-	],
+	"ignorePatterns": ["*.min.js"],
 	"overrides": [
 		{
-			"files": [
-				"*.js"
-			],
-			"extends": [
-				"eslint:recommended",
-				"prettier"
-			],
+			"files": ["*.js"],
+			"extends": ["eslint:recommended", "prettier"],
 			"env": {
 				"browser": true
 			},
@@ -20,24 +13,27 @@
 			}
 		},
 		{
-			"files": [
-				"*.php"
-			],
-			"plugins": [
-				"php-markup",
-				"tailwindcss"
-			],
-			"extends": [
-				"plugin:tailwindcss/recommended"
-			],
+			"files": ["*.php"],
+			"parser": "@angular-eslint/template-parser",
+			"plugins": ["html", "php-markup", "tailwindcss"],
+			"extends": ["plugin:tailwindcss/recommended"],
 			"rules": {
+				"tailwindcss/migration-from-tailwind-2": "off",
+				"tailwindcss/no-custom-classname": [
+					"warn",
+					{
+						"config": "./tailwind/tailwind.config.js",
+						"whitelist": [
+							"(page|entry|comment)\\-([-a-z]*)",
+							"vcard"
+						]
+					}
+				]
 			},
 			"settings": {
 				"tailwindcss": {
-					"config": "./tailwind.config.js",
-					"cssFiles": [
-						"./theme/**/*.css"
-					]
+					"config": "./tailwind/tailwind.config.js",
+					"cssFiles": ["./theme/**/*.css"]
 				}
 			}
 		}
