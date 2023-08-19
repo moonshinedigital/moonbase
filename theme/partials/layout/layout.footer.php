@@ -9,18 +9,23 @@
 
 ?>
 
-<footer id="colophon" class="site-footer">
-	<div class="site-info">
-		<a href="<?php echo esc_url( __( 'https://wordpress.org/', '_mb' ) ); ?>">
+</main>
+
+<footer class="mt-auto overflow-clip bg-yellow-300 lg:ml-72">
+	<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+	<div class="p-base mx-auto flex max-w-screen-lg flex-row justify-between border-b border-b-slate-400">
+		<?php dynamic_sidebar( 'sidebar-1' ); ?>
+	</div>
+	<?php endif; ?>
+
+	<div class="p-base mx-auto max-w-screen-lg">
+		<span>&copy; <?php echo date( 'Y' ); ?>
 			<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', '_mb' ), 'WordPress' );
-			?>
-		</a>
-		<span class="sep"> | </span>
-		<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', '_mb' ), '_mb', '<a href="http://underscores.me/">Moonshine</a>' );
-		?>
-	</div><!-- .site-info -->
-</footer><!-- #colophon -->
+			$mb_blog_info = get_bloginfo( 'name' );
+			if ( ! empty( $mb_blog_info ) ) :
+				?>
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+			<?php endif; ?></span>
+	</div>
+
+</footer>

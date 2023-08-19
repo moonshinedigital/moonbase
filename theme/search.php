@@ -10,44 +10,42 @@
 get_header();
 ?>
 
-<main id="primary" class="site-main">
+<section>
 
 	<?php if ( have_posts() ) : ?>
 
-	<header class="page-header">
-		<h1 class="page-title">
-			<?php
-				/* translators: %s: search query. */
-				printf( esc_html__( 'Search Results for: %s', '_mb' ), '<span>' . get_search_query() . '</span>' );
-			?>
-		</h1>
-	</header><!-- .page-header -->
+	<div class="page-header">
+		<?php
+			printf(
+				/* translators: 1: search result title. 2: search term. */
+				'<h1 class="page-title">%1$s <span>%2$s</span></h1>',
+				esc_html__( 'Search results for:', 'moonbase' ),
+				get_search_query()
+			);
+		?>
+	</div>
 
 		<?php
-		/* Start the Loop */
+		// Start the Loop.
 		while ( have_posts() ) :
 			the_post();
+			get_template_part( 'partials/content/content', 'excerpt' );
 
-			/**
-			 * Run the loop for the search to output the results.
-			 * If you want to overload this in a child theme then include a file
-			 * called content-search.php and that will be used instead.
-			 */
-			get_template_part( 'partials/content/content', 'search' );
-
+			// End the loop.
 		endwhile;
 
-		the_posts_navigation();
+		// Previous/next page navigation.
+		mb_the_posts_navigation();
 
 	else :
 
+		// If no content is found, get the `content-none` template part.
 		get_template_part( 'partials/content/content', 'none' );
 
 	endif;
 	?>
 
-</main><!-- #main -->
+</section>
 
 <?php
-get_sidebar();
 get_footer();

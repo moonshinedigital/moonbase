@@ -21,7 +21,7 @@
 
 	<?php mb_post_thumbnail(); ?>
 
-	<div class="entry-content">
+	<di class="entry-content">
 		<?php the_excerpt(); ?>
 	</div>
 

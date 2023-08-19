@@ -11,10 +11,12 @@
 
 ?>
 
-<?php get_template_part( 'partials/layout/layout', 'footer' ); ?>
+<?php
+get_template_part( 'partials/layout/footer', 'content' );
+?>
 
 <?php wp_footer(); ?>
 
-<w/body>
+</body>
 
 </html>

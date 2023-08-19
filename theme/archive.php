@@ -10,42 +10,34 @@
 get_header();
 ?>
 
-<main id="primary" class="site-main">
+<section>
 
 	<?php if ( have_posts() ) : ?>
 
-	<header class="page-header">
-		<?php
-			the_archive_title( '<h1 class="page-title">', '</h1>' );
-			the_archive_description( '<div class="archive-description">', '</div>' );
-		?>
-	</header>
+	<div class="page-header">
+		<?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
+	</div>
 
 		<?php
-		/* Start the Loop */
+		// Start the Loop.
 		while ( have_posts() ) :
 			the_post();
+			get_template_part( 'partials/content/content', 'excerpt' );
 
-			/*
-			 * Include the Post-Type-specific template for the content.
-			 * If you want to override this in a child theme, then include a file
-			 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-			 */
-			get_template_part( 'partials/content/content', get_post_type() );
+			// End the loop.
+		endwhile;
 
-endwhile;
+		// Previous/next page navigation.
+		mb_the_posts_navigation();
 
-		the_posts_navigation();
+	else :
 
-else :
+		// If no content, include the "No posts found" template.
+		get_template_part( 'partials/content/content', 'none' );
 
-	get_template_part( 'partials/content/content', 'none' );
+	endif;
+	?>
 
-endif;
-?>
-
-</main><!-- #main -->
-
+</section>
 <?php
-get_sidebar();
 get_footer();

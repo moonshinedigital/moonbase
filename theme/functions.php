@@ -12,7 +12,7 @@
  */
 function mb_load_assets() {
 	wp_enqueue_script( 'mb', get_theme_file_uri( '/assets/js/main.min.js' ), '', '1.0', true );
-	wp_enqueue_style( 'mb', get_theme_file_uri( '/assets/css/index.css' ), '', '1.0' );
+	wp_enqueue_style( 'mb', get_theme_file_uri( '/assets/css/style.css' ), '', '1.0' );
 }
 
 add_action( 'wp_enqueue_scripts', 'mb_load_assets' );
