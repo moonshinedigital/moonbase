@@ -8,6 +8,7 @@
 		"@wordpress/prettier-config": "^2.22.0",
 		"alpinejs": "^3.12.3",
 		"autoprefixer": "^10.4.15",
+		"cssnano": "^6.0.1",
 		"dir-archiver": "^1.1.1",
 		"esbuild": "^0.19.2",
 		"eslint": "^8.47.0",
@@ -23,8 +24,8 @@
 		"tailwindcss": "^3.3.3"
 	},
 	"scripts": {
-		"dev:tailwind": "npx tailwindcss postcss --use autoprefixer -c ./tailwind.config.js -i ./src/css/index.css -o ./theme/assets/css/index.css",
-		"dev:esbuild": "npx esbuild ./src/js/main.js --target=esnext --bundle --outdir=./theme/assets/js --out-extension:.js=.min.js",
+		"dev:tailwind": "npx tailwindcss --postcss --use autoprefixer -c ./tailwind.config.js -i ./src/css/index.css -o ./theme/assets/css/index.css",
+		"dev:esbuild": "npx esbuild ./src/js/main.js --bundle --minify --sourcemap --outdir=./theme/assets/js --out-extension:.js=.min.js",
 		"dev": "run-p dev:**",
 		"watch:tailwind": "npm run dev:tailwind --watch",
 		"watch:esbuild": "npm run dev:esbuild --watch",
@@ -35,10 +36,10 @@
 		"lint-fix:eslint": "npx eslint theme/ --fix",
 		"lint-fix:prettier": "npx prettier --write .",
 		"lint-fix": "run-p lint-fix:*",
-		"prod:tailwind": "npm run dev:tailwind --minify",
-		"prod:esbuild": "npm run dev:esbuild --minify",
-		"prod": "run-p prod:**",
-		"bundle": "dir-archiver --src ./theme --dest ./moonbase.zip --exclude .DS_Store"
+		"build:tailwind": "npm run dev:tailwind --minify",
+		"build:esbuild": "npm run dev:esbuild --minify",
+		"build:bundle": "dir-archiver --src ./theme --dest ./moonbase.zip --exclude .DS_Store",
+		"build": "run-s build:**"
 	},
 	"prettier": "@wordpress/prettier-config"
 }

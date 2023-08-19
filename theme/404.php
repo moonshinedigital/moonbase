@@ -49,7 +49,6 @@ get_header();
 
 			the_widget( 'WP_Widget_Tag_Cloud' );
 			?>
-
 		</div>
 	</section>
 
