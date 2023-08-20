@@ -1,6 +1,7 @@
 # Ignore dependencies from npm and Composer:
 node_modules/
 vendor/
+package-lock.json
 
 # Ignore generated files:
 theme/assets/**/*.css

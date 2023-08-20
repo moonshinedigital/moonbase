@@ -15,6 +15,11 @@
 		"**/theme/assets/css": true,
 		"**/theme/assets/js": true
 	},
+	"editor.insertSpaces": false,
+	"html.format.templating": true,
+	"files.insertFinalNewline": true,
+	"html.format.maxPreserveNewLines": 1,
+	"html.format.wrapAttributes": "preserve-aligned",
 	"eslint.validate": [
 		"vue",
 		"html",

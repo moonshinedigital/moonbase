@@ -14,7 +14,6 @@
 		},
 		{
 			"files": ["*.php"],
-			"parser": "@angular-eslint/template-parser",
 			"plugins": ["html", "php-markup", "tailwindcss"],
 			"extends": ["plugin:tailwindcss/recommended"],
 			"rules": {
