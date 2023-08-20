@@ -11,12 +11,14 @@ get_header();
 ?>
 
 <section>
+
 	<div class="page-header">
 		<h1 class="page-title"><?php esc_html_e( 'Page Not Found', 'moonbase' ); ?></h1>
 	</div>
 
 	<div class="page-content">
-		<p><?php esc_html_e( 'This page could not be found. It might have been removed or renamed, or it may never have existed.', 'moonbase' ); ?></p>
+		<p><?php esc_html_e( 'This page could not be found. It might have been removed or renamed, or it may never have existed.', 'moonbase' ); ?>
+		</p>
 		<?php get_search_form(); ?>
 	</div>
 </section>

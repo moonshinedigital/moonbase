@@ -13,6 +13,7 @@
 
 <footer class="mt-auto overflow-clip bg-yellow-300 lg:ml-72">
 	<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+
 	<div class="p-base mx-auto flex max-w-screen-lg flex-row justify-between border-b border-b-slate-400">
 		<?php dynamic_sidebar( 'sidebar-1' ); ?>
 	</div>

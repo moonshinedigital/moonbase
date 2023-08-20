@@ -15,6 +15,7 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
 		<?php if ( ! is_page() ) : ?>
+
 		<div class="entry-meta">
 			<?php mb_entry_meta(); ?>
 		</div>

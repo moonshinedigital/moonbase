@@ -8,6 +8,7 @@
  */
 
 ?>
+
 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<div class="entry-header">
@@ -23,10 +24,10 @@
 
 	<di class="entry-content">
 		<?php the_excerpt(); ?>
-	</div>
+</div>
 
-	<div class="entry-footer">
-		<?php mb_entry_footer(); ?>
-	</div>
+<div class="entry-footer">
+	<?php mb_entry_footer(); ?>
+</div>
 
 </div>

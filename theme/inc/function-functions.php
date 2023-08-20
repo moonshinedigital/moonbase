@@ -123,8 +123,11 @@ function mb_html5_comment( $comment, $args, $depth ) {
 	}
 	?>
 <<?php echo esc_attr( $tag ); ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( $comment->has_children ? 'parent' : '', $comment ); ?>>
+
 	<div id="div-comment-<?php comment_ID(); ?>" class="comment-body">
+
 		<div class="comment-meta">
+
 			<div class="comment-author vcard">
 				<?php
 				if ( 0 !== $args['avatar_size'] ) {

@@ -14,14 +14,14 @@
 
 <html <?php language_attributes(); ?>>
 
-	<head>
-		<meta charset="<?php bloginfo( 'charset' ); ?>">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<?php wp_head(); ?>
+<head>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<?php wp_head(); ?>
 
-	</head>
+</head>
 
-	<body <?php body_class(); ?>>
-		<?php wp_body_open(); ?>
+<body <?php body_class(); ?>>
+	<?php wp_body_open(); ?>
 
-		<?php get_template_part( 'partials/layout/layout', 'header' ); ?>
+	<?php get_template_part( 'partials/layout/layout', 'header' ); ?>
