@@ -7,12 +7,6 @@
  * https://esbuild.github.io/
  */
 
-import Alpine from 'alpinejs';
-
-window.Alpine = Alpine;
-
-Alpine.start();
-
 /* eslint-disable no-undef */
 
 // Function to toggle the mobile menu state
