@@ -2,6 +2,8 @@
 	"name": "moonbase",
 	"version": "1.0.0",
 	"devDependencies": {
+		"@angular-eslint/template-parser": "^16.1.1",
+		"prettier-plugin-tailwindcss": "^0.5.3",
 		"@wordpress/prettier-config": "^2.22.0",
 		"autoprefixer": "^10.4.15",
 		"cssnano": "^6.0.1",
@@ -19,7 +21,7 @@
 		"tailwindcss": "^3.3.3"
 	},
 	"scripts": {
-		"start:css": "tailwindcss --postcss -i ./src/css/style.css -o ./theme/assets/css/style.css --watch",
+		"start:css": "tailwindcss --postcss -i ./src/css/index.css -o ./theme/assets/css/style.css --watch",
 		"start:js": "esbuild ./src/js/main.js --outdir=./theme/assets/js --out-extension:.js=.min.js --bundle --watch",
 		"start": "run-p start:**",
 		"lint:eslint": "npx eslint theme/",
@@ -28,7 +30,7 @@
 		"lint-fix:eslint": "npx eslint theme/ --fix",
 		"lint-fix:prettier": "npx prettier --write .",
 		"lint-fix": "run-p lint-fix:*",
-		"build:css": "tailwindcss --postcss -i ./src/css/style.css -o ./theme/assets/css/style.css --minify",
+		"build:css": "tailwindcss --postcss -i ./src/css/index.css -o ./theme/assets/css/style.css --minify",
 		"build:js": "esbuild ./src/js/main.js --outdir=./theme/assets/js --out-extension:.js=.min.js --bundle --minify",
 		"build:zip": "dir-archiver --src ./theme --dest ./moonbase.zip --exclude .DS_Store .gitkeep",
 		"build": "run-s build:**"

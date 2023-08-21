@@ -45,7 +45,7 @@ if ( post_password_required() ) {
 		?>
 	</h2>
 
-	<?php the_comments_navigation(); ?>
+		<?php the_comments_navigation(); ?>
 
 	<ol>
 		<?php
@@ -59,7 +59,7 @@ if ( post_password_required() ) {
 		?>
 	</ol>
 
-	<?php
+		<?php
 		the_comments_navigation();
 
 		// If there are existing comments, but comments are closed, display a
@@ -67,7 +67,7 @@ if ( post_password_required() ) {
 		if ( ! comments_open() ) :
 			?>
 	<p><?php esc_html_e( 'Comments are closed.', 'moonbase' ); ?></p>
-	<?php
+			<?php
 		endif;
 
 	endif;

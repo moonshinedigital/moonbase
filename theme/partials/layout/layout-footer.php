@@ -20,7 +20,7 @@
 	<?php endif; ?>
 
 	<div class="p-base mx-auto max-w-screen-lg">
-		<span>&copy; <?php echo date( 'Y' ); ?>
+		<span>&copy; <?php echo gmdate( 'Y' ); ?>
 			<?php
 			$mb_blog_info = get_bloginfo( 'name' );
 			if ( ! empty( $mb_blog_info ) ) :

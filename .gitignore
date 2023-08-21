@@ -9,7 +9,7 @@ theme/assets/**/*.js
 theme/assets/**/*.min.js
 
 # Ignore the generated zip file:
-moonbase.zip
+*.zip
 
 # Ignore .DS_Store files from macOS:
 .DS_Store

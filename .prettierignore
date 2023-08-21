@@ -1,12 +1,15 @@
-# Ignore dependencies from npm and Composer:
-node_modules/
-vendor/
+# Ignore all files:
+*.*
 
-# Ignore minified JavaScript:
-*.min.js
+# Negate the above pattern for CSS files in the `tailwind` folder and for
+# all JavaScript files:
+!src/**/*.css
+!src/**/*.js
+!theme/
 
 # Ignore production builds
 theme/assets/**/*.css
 theme/assets/**/*.js
 
-# # Explicitly allow the following files:
+# Ignore minified JavaScript:
+*.min.js

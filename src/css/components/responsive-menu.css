@@ -1,25 +1,6 @@
 /**
- * Custom styles to immediately follow Tailwind’s `base` layer
- *
- * “Add things like base typography styles [or] opinionated global resets.”
- *
- * — from https://tailwindcss.com/docs/plugins#adding-base-styles
- */
-
-/**
- * This uses the background and foreground colors declared in the
- * `theme.json` file and is applied both to the frontend and in the block
- * editor.
+ * Component - Responsive Menu
 */
-
-html {
-	@apply h-full bg-white text-black;
-	-webkit-tap-highlight-color: transparent;
-}
-
-body {
-	@apply h-full flex flex-col;
-}
 
 /* Desktop Menu */
 

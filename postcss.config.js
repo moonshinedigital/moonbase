@@ -1,11 +1,11 @@
 /* eslint-env node */
+
 module.exports = {
-	plugins: {
-		'postcss-import': {},
-		'postcss-import-ext-glob': {},
-		tailwindcss: {},
-		'tailwindcss/nesting': {},
-		autoprefixer: {},
-		cssnano: {},
-	},
+	plugins: [
+		require('postcss-import-ext-glob'),
+		require('postcss-import'),
+		require('autoprefixer'),
+		require('cssnano'),
+		require('tailwindcss'),
+	],
 };
