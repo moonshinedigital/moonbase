@@ -92,4 +92,4 @@
 	</div>
 </header>
 
-<main class="p-base bg-blue-200 lg:ml-72">
+<main class="p-base bg-slate-100 max-w-screen-xl lg:ml-72">

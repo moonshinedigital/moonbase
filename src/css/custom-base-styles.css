@@ -28,7 +28,7 @@ body {
 }
 
 #desktop-menu {
-	@apply grow bg-red-200 flex flex-col overflow-y-auto;
+	@apply grow bg-white border-r flex flex-col overflow-y-auto p-base;
 }
 
 /* Mobile Menu */
@@ -80,7 +80,7 @@ body {
 }
 
 #mobile-menu-content {
-	@apply grow bg-red-200 flex flex-col overflow-y-auto;
+	@apply grow bg-white flex flex-col overflow-y-auto p-base;
 }
 
 /* Buttons */
