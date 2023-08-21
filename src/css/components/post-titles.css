@@ -19,3 +19,15 @@ h4 {
 .entry-title {
 	@apply text-3xl font-extrabold italic;
 }
+
+.page-header,
+.entry-header {
+}
+
+.page-content,
+.entry-content {
+}
+
+.page-footer,
+.entry-footer {
+}

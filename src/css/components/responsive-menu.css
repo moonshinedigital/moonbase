@@ -2,21 +2,27 @@
  * Component - Responsive Menu
 */
 
+/* Mobile Header */
+
+#mobile-header {
+	@apply top-0 z-40 gap-x-6 bg-white px-4 py-4 shadow-sm sm:px-6 lg:hidden sticky flex items-center;
+}
+
 /* Desktop Menu */
 
-#desktop-menu-wrapper {
+#desktop-menu {
 	@apply lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col hidden;
 }
-
-#desktop-menu {
-	@apply grow bg-white border-r flex flex-col overflow-y-auto p-base;
-}
-
-/* Mobile Menu */
 
 #mobile-menu {
 	@apply z-50 transition-all duration-300 ease-in-out lg:hidden relative;
 }
+
+#menu-content {
+	@apply grow bg-white flex flex-col overflow-y-auto p-base;
+}
+
+/* Mobile Menu - States */
 
 [data-menu="inactive"] {
 	@apply opacity-0 invisible;
@@ -26,18 +32,18 @@
 	@apply opacity-100 visible;
 }
 
-/* Mobile Menu - Backdrop */
+/* Mobile Menu - overlay */
 
-#mobile-menu-backdrop {
-	@apply inset-0 bg-gray-900/80 fixed;
+#mobile-menu-overlay {
+	@apply inset-0 bg-black/90 fixed;
 	@apply transition-opacity duration-300 ease-linear;
 }
 
-[data-menu="inactive"] #mobile-menu-backdrop {
+[data-menu="inactive"] #mobile-menu-overlay {
 	@apply opacity-0;
 }
 
-[data-menu="active"] #mobile-menu-backdrop {
+[data-menu="active"] #mobile-menu-overlay {
 	@apply opacity-100;
 }
 
@@ -47,21 +53,17 @@
 
 /* Mobile Menu - External Area */
 
-#mobile-menu-external {
+#mobile-menu-drawer {
 	@apply mr-16 w-full max-w-xs flex-1 relative flex;
 	@apply transition duration-300 ease-in-out transform;
 }
 
-[data-menu="inactive"] #mobile-menu-external {
+[data-menu="inactive"] #mobile-menu-drawer {
 	@apply -translate-x-full;
 }
 
-[data-menu="active"] #mobile-menu-external {
+[data-menu="active"] #mobile-menu-drawer {
 	@apply translate-x-0;
-}
-
-#mobile-menu-content {
-	@apply grow bg-white flex flex-col overflow-y-auto p-base;
 }
 
 /* Buttons */
@@ -84,11 +86,5 @@
 }
 
 #btn-open {
-	@apply -m-2.5 p-2.5 text-gray-700 lg:hidden;
-}
-
-/* Mobile Header */
-
-#mobile-header {
-	@apply top-0 z-40 gap-x-6 bg-white px-4 py-4 shadow-sm sm:px-6 lg:hidden sticky flex items-center;
+	@apply -m-2.5 p-2.5 text-black lg:hidden;
 }

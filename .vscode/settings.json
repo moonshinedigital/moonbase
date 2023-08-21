@@ -1,14 +1,14 @@
 // Workspace settings
 {
 	"files.exclude": {
-		"**/.vscode": false,
-		"**/.git": false,
-		"**/node_modules": false,
-		"**/vendor": false,
-		"**/theme/assets/css": false,
-		"**/theme/assets/js": false,
-		"*.lock": false,
-		"*-lock.json": false
+		"**/.vscode": true,
+		"**/.git": true,
+		"**/node_modules": true,
+		"**/vendor": true,
+		"**/theme/assets/css": true,
+		"**/theme/assets/js": true,
+		"*.lock": true,
+		"*-lock.json": true
 	},
 	"search.exclude": {
 		"**/.git": true,

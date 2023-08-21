@@ -11,15 +11,15 @@
 
 </main>
 
-<footer class="mt-auto overflow-clip bg-yellow-300 lg:ml-72">
+<footer>
 	<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
 
-	<div class="p-base mx-auto flex max-w-screen-lg flex-row justify-between border-b border-b-slate-400">
+	<div>
 		<?php dynamic_sidebar( 'sidebar-1' ); ?>
 	</div>
 	<?php endif; ?>
 
-	<div class="p-base mx-auto max-w-screen-lg">
+	<div>
 		<span>&copy; <?php echo gmdate( 'Y' ); ?>
 			<?php
 			$mb_blog_info = get_bloginfo( 'name' );

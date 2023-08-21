@@ -9,41 +9,25 @@
 
 ?>
 
-<header class="bg-red-200">
+<header>
 	<!-- Desktop Menu Wrapper -->
 
-	<div id="desktop-menu-wrapper">
+	<div id="desktop-menu">
 		<!-- Desktop Menu -->
-		<nav id="desktop-menu">
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-			<ul class="flex flex-col gap-y-2" role="list">
-				<?php
-				wp_nav_menu(
-					array(
-						'theme_location' => 'desktop_menu',
-						'depth'          => 1,
-						'container'      => false,
-						'items_wrap'     => '%3$s',
-						'fallback_cb'    => 'mb_menu_mising',
-					)
-				);
-				?>
-			</ul>
-		</nav>
+		<?php get_template_part( 'partials/content/content', 'menu' ); ?>
 	</div>
 
 	<!-- Mobile Menu Overlay -->
-
 	<div id="mobile-menu" style="display:none" data-menu="inactive" role="dialog" aria-modal="true">
-		<!-- Backdrop -->
+		<!-- overlay -->
 
-		<div id="mobile-menu-backdrop"></div>
+		<div id="mobile-menu-overlay"></div>
 		<!-- Mobile Menu Wrapper -->
 
 		<div id="mobile-menu-wrapper">
 			<!-- Negative Area -->
 
-			<div id="mobile-menu-external">
+			<div id="mobile-menu-drawer">
 				<!-- Close Button -->
 
 				<div id="btn-close-wrapper">
@@ -56,40 +40,24 @@
 				</div>
 
 				<!-- Mobile Menu -->
-				<nav id="mobile-menu-content">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-					<ul class="flex flex-col gap-y-2" role="list">
-						<?php
-						wp_nav_menu(
-							array(
-								'theme_location' => 'mobile_menu',
-								'depth'          => 1,
-								'container'      => false,
-								'items_wrap'     => '%3$s',
-								'fallback_cb'    => 'mb_menu_mising',
-							)
-						);
-						?>
-					</ul>
-				</nav>
+				<?php get_template_part( 'partials/content/content', 'menu' ); ?>
 			</div>
 		</div>
 	</div>
 
 	<!-- Mobile Header -->
-
 	<div id="mobile-header">
-		<button id="btn-open" type="button" class="-m-2.5 p-2.5 text-gray-700 lg:hidden">
+		<button id="btn-open" type="button" class="-m-2.5 p-2.5 text-black lg:hidden">
 			<span class="sr-only">Open menu</span>
 			<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
 				<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
 			</svg>
 		</button>
 
-		<div class="flex-1 text-sm font-semibold leading-6 text-gray-900">
+		<div class="flex-1 text-sm font-semibold leading-6 text-black">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 		</div>
 	</div>
 </header>
 
-<main class="p-base max-w-screen-xl bg-slate-100 lg:ml-72">
+<main>
