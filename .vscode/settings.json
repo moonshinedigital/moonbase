@@ -1,32 +1,22 @@
 // Workspace settings
 {
 	"files.exclude": {
-		"**/.vscode": true,
-		"**/.git": true,
-		"**/node_modules": true,
-		"**/vendor": true,
-		"**/theme/assets/css": true,
-		"**/theme/assets/js": true
+		"**/.vscode": false,
+		"**/.git": false,
+		"**/node_modules": false,
+		"**/vendor": false,
+		"**/theme/assets/css": false,
+		"**/theme/assets/js": false,
+		"*.lock": false,
+		"*-lock.json": false
 	},
 	"search.exclude": {
 		"**/.git": true,
 		"**/node_modules": true,
 		"**/vendor": true,
 		"**/theme/assets/css": true,
-		"**/theme/assets/js": true
+		"**/theme/assets/js": true,
+		"*.lock": true,
+		"*-lock.json": true,
 	},
-	"editor.insertSpaces": false,
-	"html.format.templating": true,
-	"files.insertFinalNewline": true,
-	"html.format.maxPreserveNewLines": 1,
-	"html.format.wrapAttributes": "preserve-aligned",
-	"eslint.validate": [
-		"vue",
-		"html",
-		"php",
-		"javascript",
-		"typescript",
-		"javascriptreact",
-		"typescriptreact"
-	]
 }
