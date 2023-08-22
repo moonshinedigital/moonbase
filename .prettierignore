@@ -1,12 +1,3 @@
-# Ignore all files:
-*.*
-
-# Negate the above pattern for CSS files in the `tailwind` folder and for
-# all JavaScript files:
-!src/**/*.css
-!src/**/*.js
-!theme/
-
 # Ignore production builds
 theme/assets/**/*.css
 theme/assets/**/*.js

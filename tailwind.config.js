@@ -4,6 +4,7 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
 	content: ['./src/**/*.{html,js,php}', './theme/**/*.{html,js,php}'],
+	plugins: [require('@tailwindcss/typography')],
 	theme: {
 		colors: {
 			black: '#1C2321',
@@ -18,7 +19,6 @@ module.exports = {
 				sans: ['Poppins', ...defaultTheme.fontFamily.sans],
 				display: ['Montserrat', ...defaultTheme.fontFamily.sans],
 			},
-			plugins: [],
 		},
 	},
-}
+};

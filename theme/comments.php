@@ -22,33 +22,32 @@ if ( post_password_required() ) {
 
 <div id="comments">
 
-	<?php
-	if ( have_comments() ) :
-		?>
-	<h2>
-		<?php
+	<?php if ( have_comments() ) : ?>
+		<h2>
+			<?php
 			$mb_comment_count = get_comments_number();
-		if ( '1' === $mb_comment_count ) {
-			printf(
-				/* translators: 1: title. */
-				esc_html__( 'One comment on &ldquo;%1$s&rdquo;', 'moonbase' ),
-				get_the_title()
-			);
-		} else {
-			printf(
-				/* translators: 1: comment count number, 2: title. */
-				esc_html( _nx( '%1$s comment on &ldquo;%2$s&rdquo;', '%1$s comments on &ldquo;%2$s&rdquo;', $mb_comment_count, 'comments title', 'moonbase' ) ),
-				number_format_i18n( $mb_comment_count ),
-				get_the_title()
-			);
-		}
-		?>
-	</h2>
+			if ( '1' === $mb_comment_count ) {
+				printf(
+					/* translators: 1: title. */
+					esc_html__( 'One comment on &ldquo;%1$s&rdquo;', 'moonbase' ),
+					get_the_title()
+				);
+			} else {
+				printf(
+					/* translators: 1: comment count number, 2: title. */
+					esc_html( _nx( '%1$s comment on &ldquo;%2$s&rdquo;', '%1$s comments on &ldquo;%2$s&rdquo;', $mb_comment_count, 'comments title', 'moonbase' ) ),
+					number_format_i18n( $mb_comment_count ),
+					get_the_title()
+				);
+			}
+			?>
+		</h2>
 
 		<?php the_comments_navigation(); ?>
 
-	<ol>
-		<?php
+		<ol>
+
+			<?php
 			wp_list_comments(
 				array(
 					'style'      => 'ol',
@@ -56,8 +55,8 @@ if ( post_password_required() ) {
 					'short_ping' => true,
 				)
 			);
-		?>
-	</ol>
+			?>
+		</ol>
 
 		<?php
 		the_comments_navigation();
@@ -66,7 +65,7 @@ if ( post_password_required() ) {
 		// message.
 		if ( ! comments_open() ) :
 			?>
-	<p><?php esc_html_e( 'Comments are closed.', 'moonbase' ); ?></p>
+			<p><?php esc_html_e( 'Comments are closed.', 'moonbase' ); ?></p>
 			<?php
 		endif;
 

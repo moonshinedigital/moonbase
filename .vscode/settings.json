@@ -17,6 +17,6 @@
 		"**/theme/assets/css": true,
 		"**/theme/assets/js": true,
 		"*.lock": true,
-		"*-lock.json": true,
-	},
+		"*-lock.json": true
+	}
 }

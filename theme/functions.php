@@ -57,7 +57,6 @@ if ( ! function_exists( 'mb_setup' ) ) :
 
 		// Output valid HTML5 for search form, comment form, and comments.
 		add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script' ) );
-
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
@@ -65,7 +64,7 @@ if ( ! function_exists( 'mb_setup' ) ) :
 		add_theme_support( 'responsive-embeds' );
 
 		// Additional clean up code injections.
-		require get_template_directory() . '/inc/function-cleanup.php';
+		include get_template_directory() . '/inc/function-cleanup.php';
 	}
 endif;
 add_action( 'after_setup_theme', 'mb_setup' );

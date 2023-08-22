@@ -10,9 +10,17 @@
 ?>
 
 <nav id="menu-content">
-    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-    <ul class="flex flex-col gap-y-2" role="list">
-        <?php
+
+	<div class="logo">
+		<span class="sr-only"><?php bloginfo( 'name' ); ?></span>
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="logo">
+			<?php echo file_get_contents( get_template_directory() . '/assets/images/logo.svg' ); ?>
+		</a>
+		<span class="description"><?php echo get_bloginfo( 'description' ); ?></span>
+	</div>
+
+	<ul role="list">
+		<?php
 		wp_nav_menu(
 			array(
 				'theme_location' => 'desktop_menu',
@@ -23,5 +31,5 @@
 			)
 		);
 		?>
-    </ul>
+	</ul>
 </nav>

@@ -23,11 +23,11 @@ get_header();
 			the_post_navigation(
 				array(
 					'next_text' => '<span aria-hidden="true">' . __( 'Next Post', 'moonbase' ) . '</span> ' .
-						'<span class="sr-only">' . __( 'Next post:', 'moonbase' ) . '</span> <br/>' .
-						'<span>%title</span>',
+					'<span class="sr-only">' . __( 'Next post:', 'moonbase' ) . '</span> <br/>' .
+					'<span>%title</span>',
 					'prev_text' => '<span aria-hidden="true">' . __( 'Previous Post', 'moonbase' ) . '</span> ' .
-						'<span class="sr-only">' . __( 'Previous post:', 'moonbase' ) . '</span> <br/>' .
-						'<span>%title</span>',
+					'<span class="sr-only">' . __( 'Previous post:', 'moonbase' ) . '</span> <br/>' .
+					'<span>%title</span>',
 				)
 			);
 		}

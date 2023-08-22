@@ -1,0 +1,28 @@
+/* ==========================================================================
+   COMPONENTS - WP TYPOGRAPHY
+   ========================================================================== */
+
+h1,
+h2,
+h3,
+h4 {
+	@apply font-extrabold italic;
+}
+
+.page-title,
+.entry-title {
+	@apply text-3xl font-extrabold italic;
+}
+
+.page-header,
+.entry-header {
+}
+
+.page-content,
+.entry-content {
+	@apply prose-lg max-w-none;
+}
+
+.page-footer,
+.entry-footer {
+}
