@@ -13,22 +13,11 @@
 			}
 		},
 		{
-			"files": ["*.php"],
+			"files": ["*.php", "*.html", ".css"],
 			"parser": "@angular-eslint/template-parser",
-			"plugins": ["html", "php-markup", "tailwindcss"],
+			"plugins": ["tailwindcss"],
 			"extends": ["plugin:tailwindcss/recommended"],
-			"rules": {
-				"tailwindcss/no-custom-classname": [
-					"warn",
-					{
-						"config": "./tailwind.config.js",
-						"whitelist": [
-							"(page|entry|comment)\\-([-a-z]*)",
-							"vcard"
-						]
-					}
-				]
-			},
+			"rules": {},
 			"settings": {
 				"tailwindcss": {
 					"config": "./tailwind.config.js",

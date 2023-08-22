@@ -4,3 +4,4 @@ theme/assets/**/*.js
 
 # Ignore minified JavaScript:
 *.min.js
+*.md
